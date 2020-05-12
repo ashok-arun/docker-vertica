@@ -67,5 +67,9 @@ fi
 echo "Vertica is now running"
 
 while [ "${STOP_LOOP}" == "false" ]; do
-  sleep 1
+  #sleep 1
+  # run tail in background, wait for it to finish
+  # sleep or just tail doesn't work, blocks signal processing
+  # wait is interruptible
+  tail -f /dev/null & wait ${!}
 done
