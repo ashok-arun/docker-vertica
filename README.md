@@ -1,56 +1,26 @@
-# docker images for Micro Focus Vertica
+# Running Vertica Community Edition with Docker
 
-Docker images collection for Vertica database
+Run the Vertica CE with Docker, the quickest and easiest way to try out Vertica with a single computer.
 
-Vertica is a column oriented database from Micro Focus.  
-It's available with both a free community licence, and an enterprise one.
+[Vertica](https://www.vertica.com/) is a massively scalable analytics data warehouse. With Vertia you can store your data and perform analytics on it all in one place.
 
-## News
+The [Vertica CE](https://www.vertica.com/download/vertica/community-edition/) is the community edition of Vertica, limited to up to 1TB of data across 3 nodes. This repository will get you up and running with Vertica CE on a single node in less than 30 minutes.
 
-* __2019, Apr. 8th__:  
-  Support of Vertica 8.x has been removed because I'm lacking time to manage it.
-* __2018, Jan. 31th__:  
-  Support of Vertica 7.x has been removed since this version has been EOL for quite a time.
+## Prerequisites
 
-## Flavours
+Install [Docker Desktop](https://www.docker.com/get-started) (no need to make a Docker account, it works without).
 
-Following Vertica/Operating systems versions are provided:
-- Vertica 9.x (currently 9.2)
-  * on Ubuntu LTS 16.04
-  * on Debian 8.0 Jessie
-  * on CentOS 7 (Thanks to @pcerny for the work)
+## Instructions
+### Creating and connecting to a database
+1. Clone this repository on your computer, all commands must be run from the base directory `vertica-docker/`.
+2. Launch Docker.
+3. Open up a terminal window on your computer and run ```./start_vertica.sh```
 
-__latest__ tag follows the Debian flavour of the image.
+   This runs a new docker container and starts up Vertica within it.
 
-## Usage
+4. Connect to the container with ```./connect-vertica.sh```. This drops you into a bash prompt within the container.
+5. In this bash prompt, run `/opt/vertica/bin/vsql` to connect to the actual database. From here you can run SQL commands.
 
-You can use the image without persistent data store:
+### Creating tables and importing data
 
-    docker run -p 5433:5433 jbfavre/vertica:9.2.0-7_debian-8
-
-Or with persistent data store:
-
-    docker run -p 5433:5433 -d \
-               -v /path/to/vertica_data:/home/dbadmin/docker \
-               jbfavre/vertica:9.2.0-7_debian-8
-
-Or with custom database name (default is "docker") or database password (default is no password):
-
-    docker run -p 5433:5433 -e DATABASE_NAME='notdocker' -e DATABASE_PASSWORD='foo123' jbfavre/vertica:9.2.0-7_debian-8
-
-## How to build from Dockerfile
-
-You have to get relevant Vertica package from my.vertica.com (registration mandatory).  
-Save it in packages directory.
-
-Then, use following command:
-
-    docker build -f Dockerfile.<OS_codename>.<OS_version>_<Vertica_version> \
-                 --build-arg VERTICA_PACKAGE=<vertica_package_name_matching_OS.deb/.rpm> \
-                 -t jbfavre/vertica:<Vertica_version>_<OS_codename>-<OS_version> .
-
-Or have a look into `Makefile`.
-
-## Want to contribute ?
-
-Fork, dev, make a PR :)
+TODO
