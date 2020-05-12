@@ -24,3 +24,7 @@ Install [Docker Desktop](https://www.docker.com/get-started) (no need to make a 
 ### Creating tables and importing data
 
 TODO
+
+## References and contributions
+
+Thanks to [jbfavre](https://github.com/jbfavre/docker-vertica) for doing all the heavy lifting wrt to Dockerfiles and scripts.
