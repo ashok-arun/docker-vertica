@@ -8,7 +8,7 @@ CID_FILE=$CWD/cid.txt
 echo "Data directory: $DATA"
 
 echo "Starting container..."
-CID=`docker run -p 5433:5433 -d -v $DATA:/home/dbadmin/docker glarik/vertica:10.0.0-RHEL6`
+CID=`docker run -p 5433:5433 -d -v $DATA:/home/dbadmin/docker glarik/vertica:10.0.0-RHEL7`
 echo
 
 echo "Container ID: $CID"
