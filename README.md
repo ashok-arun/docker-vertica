@@ -2,18 +2,21 @@
 
 Run the Vertica CE with Docker, the quickest and easiest way to try out Vertica with a single computer.
 
-[Vertica](https://www.vertica.com/) is a massively scalable analytics data warehouse. With Vertia you can store your data and perform analytics on it all in one place.
+[Vertica](https://www.vertica.com/) is a massively scalable analytics data warehouse. With Vertica you can store your data and perform analytics on it all in one place.
 
 The [Vertica CE](https://www.vertica.com/download/vertica/community-edition/) is the community edition of Vertica, limited to up to 1TB of data across 3 nodes. This repository will get you up and running with Vertica CE on a single node in less than 30 minutes.
 
 ## Prerequisites
 
-Install [Docker Desktop](https://www.docker.com/get-started) (no need to make a Docker account, it works without).
+Install [Docker Desktop](https://www.docker.com/get-started) (no need to make a Docker account, it works without). If Docker Desktop is not available for your platform (e.g. Ubuntu) all you need is the docker engine, which you can get [here](https://docs.docker.com/engine/install/).
 
 ## Instructions
 ### Creating and connecting to a database
 1. Clone this repository on your computer, all commands must be run from the base directory `vertica-docker/`.
-2. Launch Docker.
+2. Launch Docker. If you just installed it, it should already be running.
+ - MacOS: Hit CMD-SPACE, then type Docker and hit ENTER.
+ - Windows: Search for Docker in the start menu and click on it
+ - Linux: https://docs.docker.com/config/daemon/systemd/
 3. Open up a terminal window on your computer and run ```./start_vertica.sh```
 
    This runs a new docker container and starts up Vertica within it.
