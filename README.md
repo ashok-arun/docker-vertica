@@ -17,7 +17,7 @@ Install [Docker Desktop](https://www.docker.com/get-started) (no need to make a 
  - MacOS: Hit CMD-SPACE, then type Docker and hit ENTER.
  - Windows: Search for Docker in the start menu and click on it
  - Linux: https://docs.docker.com/config/daemon/systemd/
-3. Open up a terminal window on your computer and run ```./start_vertica.sh```
+3. Open up a terminal window on your computer and run ```./start-vertica.sh```
 
    This runs a new docker container and starts up Vertica within it.
 
