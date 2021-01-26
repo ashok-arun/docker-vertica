@@ -75,14 +75,6 @@ else
 fi
 
 echo
-echo 'Loading VMart schema ...'
-if [ "${VMART_LOAD_DATA}" == "y" ]; then
-  ${VMART_DIR}/${VMART_ETL_SCRIPT}
-else
-  echo "Nothing to load, VMART_LOAD_DATA=$VMART_LOAD_DATA"
-fi
-
-echo
 if [ -d /docker-entrypoint-initdb.d/ ]; then
   echo "Running entrypoint scripts ..."
   for f in $(ls /docker-entrypoint-initdb.d/* | sort); do
