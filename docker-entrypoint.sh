@@ -63,7 +63,7 @@ fi
 echo 'Starting up'
 if [ -z "$(ls -A "${VERTICA_DATA_DIR}")" ]; then
   echo 'Creating database'
-  ${ADMINTOOLS} -t create_db --skip-fs-checks -s localhost -d $VERTICA_DB_NAME -c ${VERTICA_DATA_DIR}/catalog -D ${VERTICA_DATA_DIR}/data
+  ${ADMINTOOLS} -t create_db --skip-fs-checks -s localhost -d $VERTICA_DB_NAME -c ${VERTICA_DATA_DIR} -D ${VERTICA_DATA_DIR}
   echo
   echo "Persisting admintools.conf into ${VERTICA_DATA_DIR} ..."
   mkdir -p ${VERTICA_DATA_DIR}/config
