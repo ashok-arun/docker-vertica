@@ -1,6 +1,7 @@
-# Running Vertica Community Edition with Docker
+# Running Vertica with Docker
 
-Run the Vertica CE with Docker, the quickest and easiest way to try out Vertica with a single computer.
+This repo defaults to run the Vertica CE with Docker, the quickest and easiest way to try out Vertica with a single computer.
+You can change the version of vertica run by adding the wanted rpm file to the packages directory and changing the argument in the makefile
 
 [Vertica](https://www.vertica.com/) is a massively scalable analytics data warehouse. With Vertica you can store your data and perform analytics on it all in one place.
 
